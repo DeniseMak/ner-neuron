@@ -6,7 +6,10 @@
 This project demonstrates how to train an LSTM to do a simple named entity recognition (NER) task, 
 with the goal of understanding which neurons are used for different parts of the task.
 The task applies BIO (beginning, inside, and outside) tokens to label words that are part of entities in these categories:
-person, location, organization, and miscellaneous. To determine which neurons are important, 
+person, location, organization, and miscellaneous. 
+
+![image of BIO labeling](readme/bio.png)
+To determine which neurons are important, 
 we systematically ablate some of them and measure the reduction in performance.
  
 
@@ -15,7 +18,7 @@ This project was inspired by, and builds on results from the following paper:
 
 > Xin, J., Lin, J., & Yu, Y. (2019, November). What Part of the Neural Network Does This? Understanding LSTMs by Measuring and Dissecting Neurons. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP) (pp. 5827-5834).
 
-* [1. About the project](#About the project)
+* [1. About the project](#About_the_project)
 * [2. Process](#Process)
 * [3. Findings](#Findings)
 
