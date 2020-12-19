@@ -9,8 +9,20 @@ The task applies BIO (beginning, inside, and outside) tokens to label words that
 person, location, organization, and miscellaneous. 
 
 ![image of BIO labeling](readme/bio.png)
-To determine which neurons are important, 
-we systematically ablate some of them and measure the reduction in performance.
+The dataset uses the following tags to label each word in a corpus:
+| Tag | Description |
+| ----| ----------- |
+| B-PER | Beginning of a person  |
+| I-PER | Inside a person's name (not the first word) |
+| B-ORG | Begin an organization name |
+| I-ORG | Inside an organization name |
+| B-LOC | Begin a location |
+| I-LOC | Inside a location name |
+| B-MISC | Begin a miscellaneous name |
+| I-MISC | Inside a miscellaneous name |
+
+To determine which neurons are important for each of the tags, 
+you can systematically ablate them one by one and measure the reduction in performance. The neurons that degrade the performance the most for a tag, when ablated, are the most important.
  
 
 
