@@ -1,0 +1,8 @@
+*.py[cod]
+__pycache__
+*.dset
+*.model
+demo.clf.*
+sent.*
+*.out
+*.log
