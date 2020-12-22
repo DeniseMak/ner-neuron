@@ -22,11 +22,25 @@ The dataset uses the following tags to label each word in a corpus:
 | I-LOC | Inside a location name |
 | B-MISC | Begin a miscellaneous name |
 | I-MISC | Inside a miscellaneous name |
+| O | Outside any entity, i.e. not part of any name |
+
 
 To determine which neurons are important for each of the tags, 
 you can systematically ablate them one by one and measure the reduction in performance. The neurons that degrade the performance the most for a tag, when ablated, are the most important.
  
+The baseline accuracies we started with before ablation were as follows:
 
+| Tag | Baseline Accuracy |
+| ----| ----------- |
+|B-LOC  | 0.90691 |
+|B-MISC	| 0.70281 |
+|B-ORG	| 0.72260 |
+|B-PER	| 0.93105 |
+|I-LOC	| 0.66926 |
+|I-MISC	| 0.55491 |
+|I-ORG	| 0.61251 |
+|I-PER	| 0.95639 |
+|O	| 0.99593 |
 
 This project was inspired by, and builds on results from the following paper:
 
