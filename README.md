@@ -3,6 +3,8 @@
 
 # Which neurons do NER?
 
+> **Video Presentation** at [https://vimeo.com/492752758](https://vimeo.com/492752758)
+
 This project demonstrates how to train an LSTM to do a simple named entity recognition (NER) task, 
 with the goal of understanding which neurons are used for different parts of the task.
 The task applies BIO (beginning, inside, and outside) tokens to label words that are part of entities in these categories:
