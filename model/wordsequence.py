@@ -130,21 +130,22 @@ class WordSequence(nn.Module):
         ''' Ablation of neurons '''
         ## this is the feature_order of a tag like B-ORG, you can change it to what you get.
         # Example for b-org g_100:
-        '''
+        # TODO: comment out and read feature_order from file
         feature_order = \
             [7, 41, 49, 39, 2, 17, 33, 10, 31, 34, 29, 23, 15, 27, 24, 47, 44, 42, 30, 22, 21, 11, 0, 12, 4, 8, 20, 9,
              5, 48, 19, 45, 32, 43, 3, 35, 36, 25, 13, 16, 37, 38, 28, 46, 14, 18, 6, 26, 1, 40]
-        '''
-        feature_order = self.data.ablate_list[self.data.ablate_tag]
+        # ------------------
+        if self.data.ablate_tag in self.data.ablate_list:
+            feature_order = self.data.ablate_list[self.data.ablate_tag]
 
-        # if we don't have enough neurons in the list to ablate the number specified in data.ablate_num
-        # then change the ablate num
-        if len(self.data.ablate_list[self.data.ablate_tag]) < self.data.ablate_num:
-            print("\nWARNING: ABLATION LIST FOR TAG: {} has length {}, ablate_num={}. Changing ablate num to match len".format(
-                self.data.ablate_tag, len(self.data.ablate_list[self.data.ablate_tag]),
-                self.data.ablate_num
-            ))
-            self.data.ablate_num = len(self.data.ablate_list[self.data.ablate_tag])
+            # if we don't have enough neurons in the list to ablate the number specified in data.ablate_num
+            # then change the ablate num
+            if len(self.data.ablate_list[self.data.ablate_tag]) < self.data.ablate_num:
+                print("\nWARNING: ABLATION LIST FOR TAG: {} has length {}, ablate_num={}. Changing ablate num to match len".format(
+                    self.data.ablate_tag, len(self.data.ablate_list[self.data.ablate_tag]),
+                    self.data.ablate_num
+                ))
+                self.data.ablate_num = len(self.data.ablate_list[self.data.ablate_tag])
 
 
         mask_np = np.ones(feature_out.shape)
@@ -155,7 +156,10 @@ class WordSequence(nn.Module):
 
         mask_tensor = torch.from_numpy(mask_np)
         mask_tensor = torch.tensor(mask_tensor, dtype=torch.float32)
-        device = torch.device("cuda")
+        if self.data.HP_gpu:
+            device = torch.device("cuda")
+        else:
+            device = torch.device("cpu")
         mask_tensor = mask_tensor.to(device)
         feature_out = feature_out.mul(mask_tensor)
         outputs = self.hidden2tag(feature_out)

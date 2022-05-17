@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Author: Jie Yang
-# @Date:   2017-10-17 16:47:32
-# @Last Modified by:   Jie Yang,     Contact: jieynlp@gmail.com
-# @Last Modified time: 2019-02-13 11:49:38
 
 from __future__ import print_function
 from __future__ import absolute_import

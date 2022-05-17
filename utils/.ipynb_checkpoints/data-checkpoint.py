@@ -1,8 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Author: Jie
-# @Date:   2017-06-14 17:34:32
-# @Last Modified by:   Jie Yang,     Contact: jieynlp@gmail.com
-# @Last Modified time: 2019-01-25 20:25:59
+
 from __future__ import print_function
 from __future__ import absolute_import
 import sys
@@ -125,7 +121,7 @@ class Data:
 
         ## sensitivity testing
         self.test_name = None
-        self.ablate_list = []
+        self.ablate_list = {}  # was []
         self.ablate_num = []
 
     def show_data_summary(self):

@@ -826,13 +826,18 @@ if __name__ == '__main__':
 
     if status == 'train':
         print("MODEL: train")
-        data_initialization(data)
+        data_initialization(data)  # set up alphabets
         data.generate_instance('train')
         data.generate_instance('dev')
         data.generate_instance('test')
         data.build_pretrain_emb()
         if not args.loadtotest:
             print("Training model, not just testing because --loadtotest is {}".format(args.loadtotest))
+            print("Loading ablation file even though it's just a placeholder")
+            debug_ablation = False
+            if debug_ablation:
+                data.ablate_list = load_ablation_file()  # TODO: file not found
+                tag_list = data.ablate_list.keys()
             train(data)
         else:
             if args.ablate:

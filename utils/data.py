@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-# @Author: Jie
-# @Date:   2017-06-14 17:34:32
-# @Last Modified by:   Jie Yang,     Contact: jieynlp@gmail.com
-# @Last Modified time: 2019-01-25 20:25:59
+# @Last Modified by:   Denise Mak,     Contact: mak.denise@gmail.com
+# @Last Modified time: 2022-5-17
 from __future__ import print_function
 from __future__ import absolute_import
 import sys
+
 from .alphabet import Alphabet
 from .functions import *
 
@@ -18,13 +17,15 @@ except ImportError:
 START = "</s>"
 UNKNOWN = "</unk>"
 PADDING = "</pad>"
+# self.HP_gpu should be True or False
+# DEVICE = "cpu"  # "cuda","cuda:0", or "cpu  # todo: put in config
 
 class Data:
     def __init__(self):
         '''
         Includes variables used for sensitivity and ablation
         '''
-
+        #self.device = torch.device(DEVICE)
         '''
         Additions for sensitivity calulation
         '''
@@ -127,7 +128,7 @@ class Data:
         ## ablation testing
         self.test_name = None
         self.ablate_tag = ''
-        self.ablate_list = []
+        self.ablate_list = {} #[]
         self.ablate_num = 0
         self.current_ablate_ind = {} # per tag. {B_ORG: 1, B_LOC: 5, O: 2, ...}
         self.weights_saved = False
@@ -240,9 +241,13 @@ class Data:
         # exit(0)
 
 
-    def build_alphabet(self, input_file):
+    def build_alphabet(self, input_file, DEBUG=True):
         in_lines = open(input_file,'r').readlines()
+        if DEBUG:
+            count_sentences = 0
         for line in in_lines:
+            if DEBUG:
+                if len(line) <= 2: count_sentences+=1
             if len(line) > 2:
                 ## if sentence classification data format, splited by \t
                 if self.sentence_classification:
@@ -281,6 +286,8 @@ class Data:
                         self.feature_alphabets[idx].add(feat_idx)
                     for char in word:
                         self.char_alphabet.add(char)
+        if DEBUG:
+            print(f"\n\t **** SENTENCE COUNT = {count_sentences} ****")
         self.word_alphabet_size = self.word_alphabet.size()
         self.char_alphabet_size = self.char_alphabet.size()
         self.label_alphabet_size = self.label_alphabet.size()
