@@ -1,6 +1,6 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
+name: User story
+about: A story that has component tasks
 title: ''
 labels: enhancement, user story
 assignees: DeniseMak
