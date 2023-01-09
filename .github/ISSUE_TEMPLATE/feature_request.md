@@ -8,17 +8,16 @@ assignees: DeniseMak
 ---
 
 **Is your feature request related to a problem? Please describe.**
+Yes/no
+
+**If there is a problem, describe it**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
 **List the component tasks**
--[ ] task 1
--[ ] task 2
+- [ ] task 1
+- [ ] task 2
+- [ ] #
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
-
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
