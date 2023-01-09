@@ -8,8 +8,7 @@ assignees: ''
 ---
 
 ** Describe the task **
-Simple description of the task here.
+A concise description of the task.
 
 ** Which feature or story is this task part of? **
-
 Enter the feature or story #, by typing '#' to choose it from a list.
