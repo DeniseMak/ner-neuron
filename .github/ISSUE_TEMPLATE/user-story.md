@@ -14,10 +14,9 @@ Yes/no
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
 **List the component tasks**
-- [ ] task 1
-- [ ] task 2
-- [ ] #
+- [ ] Describe the task(s)
+- [ ] or type '#' to link an existing issue as a component of this story
 
 
 **Additional context**
-Add any other context or screenshots about the feature request here.
+Add any other context or screenshots about the story here.
