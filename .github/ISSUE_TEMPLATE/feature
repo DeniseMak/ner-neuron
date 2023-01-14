@@ -1,0 +1,19 @@
+---
+name: Feature
+about: A feature that has stories
+title: ''
+labels: feature
+assignees: @me
+
+---
+
+**Feature description**
+
+**List the stories**
+- [ ] Describe the task(s)
+- [ ] or type '#' to link an existing issue as a component of this feature
+
+
+**Additional context**
+Add any other context about the feature here.  
+Include [links](https://) to any documentation or notebooks external to this repo.
