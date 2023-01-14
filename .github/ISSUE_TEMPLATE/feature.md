@@ -1,4 +1,3 @@
-
 ---
 name: Feature
 about: Core high-level functionality for a product or initiative
