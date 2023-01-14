@@ -1,18 +1,16 @@
+
 ---
 name: Feature
-about: A feature that has stories
+about: Core high-level functionality for a product or initiative
 title: ''
 labels: feature
 assignees: @me
 
 ---
 
-**Feature description**
-
-**List the stories**
-- [ ] Describe the task(s)
-- [ ] or type '#' to link an existing issue as a component of this feature
-
+**List the component stories **
+- [ ] Describe the story
+- [ ] or type '#' to link an existing issue as a story that is part of the feature
 
 **Additional context**
 Add any other context about the feature here.  
