@@ -1,5 +1,5 @@
 ---
-name: User story
+name: story
 about: A story that has component tasks
 title: ''
 labels: user story
