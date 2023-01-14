@@ -5,8 +5,10 @@ title: ''
 labels: feature
 assignees: '@me'
 
-**Feature Description**
 ---
+
+**Feature Description**
+<Description here>
 
 **List the component stories**
 - [ ] Describe the story
