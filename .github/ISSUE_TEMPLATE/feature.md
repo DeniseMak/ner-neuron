@@ -1,14 +1,16 @@
-
 ---
 name: Feature
 about: Core high-level functionality for a product or initiative
 title: ''
 labels: feature
-assignees: @me
+assignees: '@me'
 
 ---
 
-**List the component stories **
+**Feature Description**
+<Description here>
+
+**List the component stories**
 - [ ] Describe the story
 - [ ] or type '#' to link an existing issue as a story that is part of the feature
 
