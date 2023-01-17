@@ -1,4 +1,4 @@
-name: Add bugs to bugs project
+name: Add issues to project
 
 on:
   issues:
@@ -14,7 +14,8 @@ jobs:
         with:
           # You can target a repository in a different organization
           # to the issue
-          project-url: https://github.com/users/DeniseMak/projects/4
+          project-url: https://github.com/users/DeniseMak/projects/2
           github-token: ${{ secrets.MY_GITHUB_TOKEN }}
+          column_name: "Backlog"
           #labeled: feature, task, user story
           #label-operator: OR
