@@ -16,6 +16,6 @@ jobs:
           # to the issue
           project-url: https://github.com/users/DeniseMak/projects/2
           github-token: ${{ secrets.MY_GITHUB_TOKEN }}
-          column_name: "Backlog"
+          # We could optionally restrict auto-add to certain types of issues
           #labeled: feature, task, user story
           #label-operator: OR
